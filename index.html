@@ -10,6 +10,9 @@
 
 <style>
   .prompt {
+    text-align: center;
+    width: 50%;
+    margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -27,6 +30,14 @@
     border-radius: 4px;
     white-space: nowrap;
     overflow: hidden;
+    text-align: center;
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: monospace;
+    font-size: 16px;
   }
   
   .typing::after {
@@ -40,8 +51,15 @@
   }
 </style>
 
-<script>
-  const answerText = "Navigating the Intersection of Law and Technology";
+<style>
+  .answer-text {
+    white-space: pre-line;
+  }
+</style>
+
+<p id="answer-text" class="answer-text"></p>
+  <script>
+  const answerText = "Navigating the Intersection of\n Law and Technology";
   let i = 0;
   const answerEl = document.getElementById("answer-text");
   
@@ -53,7 +71,6 @@
     }
   }
   
-  answerEl.classList.add("typing");
   type();
 </script>
 
