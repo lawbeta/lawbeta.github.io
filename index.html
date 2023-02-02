@@ -2,9 +2,63 @@
 <html>
   <head>
     <title>LawBeta</title>
-    
+    <div class="prompt">
+  <div class="prompt-text"></div>
+  <div id="answer-text" class="answer-text"></div>
+</div>
+
+<style>
+  .prompt {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: monospace;
+    font-size: 16px;
+  }
+  
+  .prompt-text {
+    color: gray;
+  }
+  
+  .answer-text {
+    color: white;
+    padding: 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  
+  .typing::after {
+    content: "|";
+    animation: typing 1s infinite;
+  }
+  
+  @keyframes typing {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+</style>
+
+<script>
+  const answerText = "Navigating the Intersection of Law and Technology";
+  let i = 0;
+  const answerEl = document.getElementById("answer-text");
+  
+  function type() {
+    if (i < answerText.length) {
+      answerEl.innerHTML += answerText.charAt(i);
+      i++;
+      setTimeout(type, 50);
+    }
+  }
+  
+  answerEl.classList.add("typing");
+  type();
+</script>
+
     <style>
       html, body {
+        overflow: hidden;
         height: 100%;
         margin: 0;
         padding: 0;
